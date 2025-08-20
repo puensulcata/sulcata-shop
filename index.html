@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>เพื่อนซูคาต้า – ร้านลูกเต่าซูคาต้า</title>
+  <meta name="description" content="เพื่อนซูคาต้า – ร้านลูกเต่าซูคาต้า ลูกเต่าพร้อมส่ง ดูข้อมูล ขนาด ราคา ทักเพจ Facebook และ TikTok ได้ทันที" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --cream:#F7F1E6; --cream-2:#F1E6D6; --brown:#8B5E3C; --brown-2:#6F4B2E; --text:#4B3A2F; --border:#E6D8C8; --accent:#D9BFA3;
+    }
+    *{box-sizing:border-box}
+    body{font-family:"Noto Sans Thai", system-ui, sans-serif; margin:0; background:var(--cream); color:var(--text)}
+    a{color:var(--brown); text-decoration:none}
+    /* Header */
+    header{position:sticky; top:0; z-index:10; backdrop-filter:saturate(120%) blur(4px); background:rgba(247,241,230,.9); border-bottom:1px solid var(--border)}
+    .wrap{max-width:1100px; margin:auto; padding:10px 16px}
+    .row{display:flex; align-items:center; justify-content:space-between; gap:12px}
+    .brand{display:flex; align-items:center; gap:10px}
+    .brand img{width:50px; height:50px; object-fit:cover; border-radius:12px; border:1px solid var(--border); background:#fff}
+    .brand .title{line-height:1}
+    .brand .title .name{font-weight:800; font-size:20px; color:var(--brown-2)}
+    .brand .title .tag{font-size:12px; color:#7a6a57}
+    nav{display:flex; align-items:center; gap:10px}
+    nav a{padding:8px 14px; border-radius:12px; border:1px solid var(--border); background:#fff; box-shadow:0 2px 6px rgba(0,0,0,.06); transition:.2s}
+    nav a:hover{background:var(--cream-2); transform:translateY(-1px)}
+    /* Search top-right */
+    .search{position:relative;}
+    .search input{width:220px; padding:10px 36px 10px 12px; border-radius:12px; border:1px solid var(--border); background:#fff}
+    .search .icon{position:absolute; right:10px; top:50%; transform:translateY(-50%); opacity:.6}
+    /* Hero */
+    .hero{margin:18px auto 0; max-width:1100px; border:1px solid var(--border); background:linear-gradient(135deg,#FBF6EC, #F3E6D6); border-radius:22px; box-shadow:0 6px 24px rgba(0,0,0,.05)}
+    .hero-in{padding:28px 18px 32px}
+    .kicker{display:inline-flex; align-items:center; gap:6px; font-size:12px; padding:6px 10px; border:1px solid var(--border); border-radius:999px; background:#fff9; backdrop-filter:blur(4px)}
+    h1{margin:8px 0 6px; font-size:28px; color:var(--brown-2)}
+    .lead{color:#7a6a57}
+    .cta{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap}
+    .btn{display:inline-block; padding:10px 18px; border-radius:16px; border:1px solid transparent; font-weight:600; cursor:pointer}
+    .btn.primary{background:var(--brown); color:#fff}
+    .btn.primary:hover{filter:brightness(.95)}
+    .btn.outline{background:#fff; color:var(--brown-2); border:1px solid var(--brown-2)}
+    /* Info + catalog */
+    .section{max-width:1100px; margin:22px auto; padding:0 16px}
+    .info-grid{display:grid; grid-template-columns:2fr 1fr; gap:14px}
+    .panel{background:#fff; border:1px solid var(--border); border-radius:18px; padding:16px}
+    .panel h3{margin:4px 0 10px; color:var(--brown-2)}
+    .line{margin:8px 0;}
+    .strong{font-weight:800; color:var(--brown-2)}
+    .boxed{border:1px dashed var(--border); background:#fff; padding:10px 12px; border-radius:12px}
+    /* Catalog */
+    .catalog-head{display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap}
+    .catalog-head h2{font-size:22px; color:var(--brown-2); margin:0}
+    .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; margin-top:14px}
+    .card{background:#fff; border:1px solid var(--border); border-radius:18px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,.04)}
+    .card .img{position:relative; aspect-ratio:4/3; background:var(--cream-2)}
+    .card img{width:100%; height:100%; object-fit:cover}
+    .card .info{padding:12px 14px}
+    .name{font-weight:700}
+    .muted{color:#7a6a57; font-size:13px}
+    .price{color:var(--brown); font-weight:800}
+    .card .foot{display:flex; align-items:center; justify-content:space-between; margin-top:10px}
+    /* Footer */
+    footer{background:rgba(255,255,255,.8); border-top:1px solid var(--border); margin-top:30px}
+    footer .wrap{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:14px}
+    footer h4{margin:0 0 6px; color:var(--brown-2)}
+    .copyright{padding:10px 0 20px; text-align:center; font-size:12px; color:#7a6a57}
+    /* Responsive */
+    @media (max-width:800px){.info-grid{grid-template-columns:1fr}.search input{width:160px}h1{font-size:24px}}
+  </style>
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="wrap">
+      <div class="row">
+        <div class="brand">
+          <img src="logo.png" alt="โลโก้ เพื่อนซูคาต้า" />
+          <div class="title">
+            <div class="name">เพื่อนซูคาต้า</div>
+            <div class="tag">ร้านขายเต่าซูคาต้า จัดส่งทั่วประเทศ</div>
+          </div>
+        </div>
+        <nav>
+          <a href="#catalog">ลูกเต่าพร้อมส่ง</a>
+          <a href="https://web.facebook.com/profile.php?id=61579800833956" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.tiktok.com/@puensulcata" target="_blank" rel="noopener">TikTok</a>
+          <div class="search">
+            <input id="search" type="search" placeholder="ค้นหาลูกเต่า..." />
+            <span class="icon">🔎</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-in">
+      <div class="kicker">✅ เพาะฟาร์มในไทย • มีใบรับรอง • ส่งด่วนแบบห่วงใย</div>
+      <h1>ร้านลูกเต่าซูคาต้า – น่ารัก แข็งแรง พร้อมส่งถึงบ้าน</h1>
+      <p class="lead">เลือกชมลูกเต่าที่ถูกใจ ดูข้อมูลสุขภาพและอายุโดยประมาณ แล้วทักแชทเพื่อสั่งซื้อผ่านแฟนเพจหรือ TikTok ได้ทันที</p>
+      <div class="cta">
+        <a class="btn primary" href="#catalog">ดูลูกเต่าพร้อมส่ง</a>
+        <a class="btn outline" href="https://web.facebook.com/profile.php?id=61579800833956" target="_blank" rel="noopener">ทักเพจ</a>
+        <a class="btn outline" href="https://www.tiktok.com/@puensulcata" target="_blank" rel="noopener">เปิด TikTok</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INFO ===== -->
+  <div class="section">
+    <div class="info-grid">
+      <div class="panel">
+        <h3>ข้อมูลสำคัญ</h3>
+        <div class="line">ลูกเต่าทุกตัวเพาะในฟาร์มไทย พร้อมใบรับรองตามที่กฎหมายกำหนด</div>
+        <div class="line">ช่วงแรกแนะนำเลี้ยงใน <span class="strong">(กระบะ พร้อมไฟ UVA/UVB)</span> ควบคุมอุณหภูมิและความชื้น ให้อยู่ที่ 28-32° ไม่เกินนี้</div>
+        <div class="line boxed">อาหารหลัก: อาหารเม็ด • เสริมผักหญ้าแต่ไม่ควรให้เยอะ หลีกเลี่ยงผักผลไม้หวานจัด</div>
+      </div>
+      <div class="panel">
+        <h3>ติดต่อด่วน</h3>
+        <p><a class="btn outline" href="https://web.facebook.com/profile.php?id=61579800833956" target="_blank" rel="noopener">ทักเพจ Facebook</a></p>
+        <p><a class="btn outline" href="https://www.tiktok.com/@puensulcata" target="_blank" rel="noopener">ดู TikTok</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CATALOG ===== -->
+  <div class="section" id="catalog">
+    <div class="catalog-head">
+      <h2>ลูกเต่าพร้อมส่ง</h2>
+      <a class="btn outline" href="https://web.facebook.com/profile.php?id=61579800833956" target="_blank" rel="noopener">สอบถามสต็อก</a>
+    </div>
+    <div class="grid" id="grid">
+      <div class="card">
+        <div class="img">
+          <img src="https://images.unsplash.com/photo-1562022791-7b1caa3b1e01?q=80&w=1200&auto=format&fit=crop" alt="ซูคาต้า 2 นิ้ว">
+        </div>
+        <div class="info">
+          <div class="name">ซูคาต้า 2 นิ้ว</div>
+          <div class="muted">กินเก่ง แข็งแรง เหมาะเริ่มต้น</div>
+          <div class="price">฿1,200</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="img">
+          <img src="https://images.unsplash.com/photo-1605540436563-8e67cbe5b62d?q=80&w=1200&auto=format&fit=crop" alt="ซูคาต้า 2.5 นิ้ว">
+        </div>
+        <div class="info">
+          <div class="name">ซูคาต้า 2.5 นิ้ว</div>
+          <div class="muted">ลายสวย หัวไว ชอบกินหญ้าเนเปียร์</div>
+          <div class="price">฿1,500</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="img">
+          <img src="https://images.unsplash.com/photo-1548247416-ec66f4900b2a?q=80&w=1200&auto=format&fit=crop" alt="ซูคาต้า 3 นิ้ว">
+        </div>
+        <div class="info">
+          <div class="name">ซูคาต้า 3 นิ้ว</div>
+          <div class="muted">ลายโดดเด่น แข็งแรง</div>
+          <div class="price">฿2,200</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="wrap">
+      <div>
+        <h4>เพื่อนซูคาต้า</h4>
+        <p>ดูแลและส่งมอบลูกเต่าคุณภาพ ด้วยความใส่ใจทุกขั้นตอน</p>
+      </div>
+      <div>
+        <h4>เมนู</h4>
+        <p><a href="#catalog">ลูกเต่าพร้อมส่ง</a></p>
+        <p><a href="https://web.facebook.com/profile.php?id=61579800833956" target="_blank" rel="noopener">แฟนเพจ Facebook</a></p>
+        <p><a href="https://www.tiktok.com/@puensulcata" target="_blank" rel="noopener">TikTok</a></p>
+      </div>
+      <div>
+        <h4>ติดตามเรา</h4>
+        <p><a href="https://web.facebook.com/profile.php?id=61579800833956" target="_blank" rel="noopener">Facebook</a></p>
+        <p><a href="https://www.tiktok.com/@puensulcata" target="_blank" rel="noopener">@puensulcata</a></p>
+      </div>
+    </div>
+    <div class="copyright">© <span id="year"></span> เพื่อนซูคาต้า • สงวนลิขสิทธิ์</div>
+  </footer>
+
+  <script>
+    // ค้นหาแบบเรียลไทม์
+    const search=document.getElementById('search');
+    search?.addEventListener('input',()=>{
+      const q=(search.value||'').toLowerCase();
+      document.querySelectorAll('#grid .card').forEach(card=>{
+        const text=card.innerText.toLowerCase();
+        card.style.display = text.includes(q) ? '' : 'none';
+      })
+    });
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
